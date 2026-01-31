@@ -1,17 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <title>Conectando...</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      background: white;
+    }
+    button {
+      font-size: 18px;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 8px;
+      background: #000;
+      color: #fff;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-  <audio autoplay>
-    <source src="https://memes.casa/audio/gemido-whatsapp" type="audio/mpeg">
-  </audio>
 
-  <script>
-    const audio = document.querySelector("audio");
+<button onclick="play()">conectar</button>
+
+<audio id="audio">
+  <source src="https://memes.casa/audio/gemido-whatsapp" type="audio/mpeg">
+</audio>
+
+<script>
+  function play() {
+    const audio = document.getElementById("audio");
     audio.play();
-  </script>
+    document.body.innerHTML = "";
+  }
+</script>
+
 </body>
 </html>
